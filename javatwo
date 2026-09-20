@@ -1,0 +1,515 @@
+Aqui está todo o código da lista consolidado em um único bloco contínuo de texto. Cada classe está devidamente separada com o pacote `br.com.jangoi.lista02`. Basta clicar no botão de **Copiar** no canto superior do bloco:
+
+```java
+// ==========================================
+// EXERCÍCIO 01
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a idade: ");
+        int idade = scanner.nextInt();
+
+        if (idade >= 16) {
+            System.out.println("Pode votar.");
+        }
+        if (idade >= 18) {
+            System.out.println("Pode dirigir.");
+        }
+        if (idade >= 60) {
+            System.out.println("É idoso.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 02
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um número inteiro: ");
+        int numero = scanner.nextInt();
+
+        if (numero > 0) {
+            System.out.println("É positivo.");
+        }
+        if (numero % 2 == 0) {
+            System.out.println("É par.");
+        }
+        if (numero % 5 == 0) {
+            System.out.println("É múltiplo de 5.");
+        }
+        
+        int absNumero = Math.abs(numero);
+        if (absNumero >= 10 && absNumero <= 99) {
+            System.out.println("Tem dois dígitos.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 03
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a temperatura em Celsius: ");
+        double temp = scanner.nextDouble();
+
+        System.out.print("Digite a umidade relativa do ar (%): ");
+        double umidade = scanner.nextDouble();
+
+        if (temp >= 38.0) {
+            System.out.println("Alerta de calor extremo!");
+        }
+        if (umidade < 30.0) {
+            System.out.println("Alerta de umidade baixa!");
+        }
+        if (temp >= 35.0 && umidade < 20.0) {
+            System.out.println("Alerta de risco de queimada!");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 04
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Digite o segundo número: ");
+        int num2 = scanner.nextInt();
+
+        if (num2 == 0) {
+            System.out.println("A verificação não pode ser feita pois o segundo número é zero.");
+        } else {
+            if (num1 % num2 == 0) {
+                System.out.println(num1 + " é múltiplo de " + num2 + ".");
+            } else {
+                System.out.println(num1 + " NÃO é múltiplo de " + num2 + ".");
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 05
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio05 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um ano: ");
+        int ano = scanner.nextInt();
+
+        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+            System.out.println("O ano " + ano + " é bissexto.");
+        } else {
+            System.out.println("O ano " + ano + " NÃO é bissexto.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 06
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio06 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o valor da compra: R$ ");
+        double compra = scanner.nextDouble();
+        double frete;
+
+        if (compra >= 199.00) {
+            frete = 0.0;
+        } else {
+            frete = 24.90;
+        }
+
+        double total = compra + frete;
+
+        System.out.printf("Valor do frete: R$ %.2f%n", frete);
+        System.out.printf("Total a pagar: R$ %.2f%n", total);
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 07
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio07 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a hora do dia (0 a 23): ");
+        int hora = scanner.nextInt();
+
+        if (hora >= 0 && hora <= 11) {
+            System.out.println("Bom dia");
+        } else if (hora >= 12 && hora <= 17) {
+            System.out.println("Boa tarde");
+        } else if (hora >= 18 && hora <= 23) {
+            System.out.println("Boa noite");
+        } else {
+            System.out.println("Hora inválida.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 08
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio08 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a velocidade máxima da via (km/h): ");
+        double velMaxima = scanner.nextDouble();
+
+        System.out.print("Digite a velocidade do veículo (km/h): ");
+        double velVeiculo = scanner.nextDouble();
+
+        if (velVeiculo <= velMaxima) {
+            System.out.println("Sem infração (dentro do limite).");
+        } else if (velVeiculo <= velMaxima * 1.20) {
+            System.out.println("Infração Média (até 20% acima do limite).");
+        } else if (velVeiculo <= velMaxima * 1.50) {
+            System.out.println("Infração Grave (acima de 20% até 50% acima do limite).");
+        } else {
+            System.out.println("Infração Gravíssima (acima de 50% do limite).");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 09
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio09 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o salário do funcionário: R$ ");
+        double salario = scanner.nextDouble();
+
+        System.out.print("Digite o tempo de casa em anos: ");
+        double tempoCasa = scanner.nextDouble();
+
+        double percentual;
+
+        if (tempoCasa < 1.0) {
+            percentual = 0.0;
+        } else if (tempoCasa <= 3.0) {
+            percentual = 0.05;
+        } else if (tempoCasa <= 10.0) {
+            percentual = 0.10;
+        } else {
+            percentual = 0.15;
+        }
+
+        double valorBonus = salario * percentual;
+
+        System.out.printf("Percentual do bônus: %.0f%%%n", percentual * 100);
+        System.out.printf("Valor do bônus: R$ %.2f%n", valorBonus);
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 10
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o usuário: ");
+        String usuario = scanner.nextLine();
+
+        if (!usuario.equalsIgnoreCase("admin")) {
+            System.out.println("Usuário não encontrado.");
+        } else {
+            System.out.print("Digite a senha: ");
+            String senha = scanner.nextLine();
+
+            if (senha.equals("java123")) {
+                System.out.println("Acesso liberado.");
+            } else {
+                System.out.println("Senha incorreta.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 11
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a frequência (%): ");
+        double frequencia = scanner.nextDouble();
+
+        if (frequencia < 75.0) {
+            System.out.println("Reprovado por falta.");
+        } else {
+            System.out.print("Digite a média final: ");
+            double media = scanner.nextDouble();
+
+            if (media >= 7.0) {
+                System.out.printf("Aprovado com média %.2f.%n", media);
+            } else if (media >= 5.0) {
+                System.out.printf("Recuperação com média %.2f.%n", media);
+            } else {
+                System.out.printf("Reprovado por nota com média %.2f.%n", media);
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 12
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o saldo da conta: R$ ");
+        double saldo = scanner.nextDouble();
+
+        System.out.print("Digite o limite diário de saque: R$ ");
+        double limiteDiario = scanner.nextDouble();
+
+        System.out.print("Digite o valor do saque solicitado: R$ ");
+        double valorSaque = scanner.nextDouble();
+
+        if (saldo < valorSaque) {
+            System.out.println("Saldo insuficiente.");
+        } else {
+            if (valorSaque > limiteDiario) {
+                System.out.println("O valor solicitado ultrapassa o limite diário de saque.");
+            } else {
+                saldo -= valorSaque;
+                System.out.println("Saque efetuado com sucesso.");
+                System.out.printf("Novo saldo: R$ %.2f%n", saldo);
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 13
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número: ");
+        double n1 = scanner.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        double n2 = scanner.nextDouble();
+
+        System.out.println("Escolha uma opção:");
+        System.out.println("1 - Soma");
+        System.out.println("2 - Subtração");
+        System.out.println("3 - Multiplicação");
+        System.out.println("4 - Divisão");
+        System.out.print("Opção: ");
+        int opcao = scanner.nextInt();
+
+        switch (opcao) {
+            case 1 -> System.out.printf("Resultado da soma: %.2f%n", (n1 + n2));
+            case 2 -> System.out.printf("Resultado da subtração: %.2f%n", (n1 - n2));
+            case 3 -> System.out.printf("Resultado da multiplicação: %.2f%n", (n1 * n2));
+            case 4 -> {
+                if (n2 == 0) {
+                    System.out.println("Erro: Divisão por zero não é permitida.");
+                } else {
+                    System.out.printf("Resultado da divisão: %.2f%n", (n1 / n2));
+                }
+            }
+            default -> System.out.println("Opção inválida.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 14
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o número do mês (1 a 12): ");
+        int mes = scanner.nextInt();
+
+        switch (mes) {
+            case 1, 3, 5, 7, 8, 10, 12 -> System.out.println("O mês possui 31 dias.");
+            case 4, 6, 9, 11 -> System.out.println("O mês possui 30 dias.");
+            case 2 -> System.out.println("O mês possui 28 dias.");
+            default -> System.out.println("Mês inválido.");
+        }
+
+        scanner.close();
+    }
+}
+
+// ==========================================
+// EXERCÍCIO 15
+// ==========================================
+package br.com.jangoi.lista02;
+
+import java.util.Scanner;
+
+public class Exercicio15 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Terminal de Estacionamento ---");
+        System.out.print("Digite o tipo do veículo (1 - Carro, 2 - Moto): ");
+        int tipoVeiculo = scanner.nextInt();
+
+        double tarifaHora = 0;
+        boolean tipoValido = true;
+
+        switch (tipoVeiculo) {
+            case 1 -> tarifaHora = 8.00;
+            case 2 -> tarifaHora = 5.00;
+            default -> {
+                System.out.println("Opção inválida.");
+                tipoValido = false;
+            }
+        }
+
+        if (tipoValido) {
+            System.out.print("Digite a quantidade de horas: ");
+            int horas = scanner.nextInt();
+
+            double valorTotal = horas * tarifaHora;
+
+            scanner.nextLine();
+
+            System.out.print("Possui cupom de desconto? (sim/nao): ");
+            String temCupom = scanner.nextLine();
+
+            if (temCupom.equalsIgnoreCase("sim")) {
+                if (valorTotal >= 50.00) {
+                    valorTotal *= 0.80;
+                    System.out.println("Cupom aplicado! Desconto de 20%.");
+                } else {
+                    System.out.println("O cupom vale apenas para compras acima de R$ 50,00.");
+                }
+            }
+
+            if (horas > 12) {
+                System.out.println("Aviso: Permanência longa.");
+            }
+            if (horas > 24) {
+                System.out.println("Aviso: Cobrança de diária aplicada.");
+            }
+
+            if (horas <= 2) {
+                System.out.println("Classificação da permanência: Curta.");
+            } else if (horas <= 6) {
+                System.out.println("Classificação da permanência: Média.");
+            } else {
+                System.out.println("Classificação da permanência: Longa.");
+            }
+
+            System.out.printf("Valor final a pagar: R$ %.2f%n", valorTotal);
+        }
+
+        scanner.close();
+    }
+}
+
+```
